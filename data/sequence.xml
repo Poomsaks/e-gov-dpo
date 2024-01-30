@@ -1,0 +1,9 @@
+<odoo>
+    <data noupdate="0">
+        <record id="mdm_invoice_sequence" model="ir.sequence">
+            <field name="name">MDM invoice</field>
+            <field name="code">mdm.invoice.sequence</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+</odoo>

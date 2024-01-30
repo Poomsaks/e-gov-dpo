@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="custom_inherit_res_partner_tree" model="ir.ui.view">
+            <field name="name">custom.inherit.res.partner.tree</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='display_name']" position="after">
+                    <field name="position_id"/>
+                </xpath>
+                <xpath expr="//field[@name='email']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="custom_inherit_res_partner_form" model="ir.ui.view">
+            <field name="name">รายชื่อ</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//group//group[1]" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//notebook//page[1]" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//notebook//page[2]" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//notebook//page[3]" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//field[@name='parent_id']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//field[@name='commercial_partner_id']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//field[@name='company_type']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//field[@name='function']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//field[@name='mobile']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//field[@name='website']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//field[@name='lang']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//field[@name='category_id']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//field[@name='title']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//field[@name='email']" position="after">
+                        <field name="position_id"/>
+                        <field name="username"/>
+                        <field name="password"/>
+                        <field name="card_number_id"/>
+                        <field name="relation_status"/>
+                        <field name="relation_detail"/>
+
+                        <field name="document_type_1"/>
+                        <field name="document_name_1"/>
+                        <field name="document_attach_1"/>
+                        <field name="document_type_2"/>
+                        <field name="document_name_2"/>
+                        <field name="document_attach_2"/>
+
+                        <field name="document_type_3"/>
+                        <field name="document_name_3"/>
+                        <field name="document_attach_3"/>
+
+                    </xpath>
+
+                </data>
+
+
+            </field>
+        </record>
+
+        <record id="custom_inherit_res_partner_action" model="ir.actions.act_window">
+            <field name="name">รายชื่อ</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="custom_inherit_res_partner_menu" name="รายชื่อ" parent="main_menu_document"
+                  action="custom_inherit_res_partner_action" sequence="4"/>
+
+    </data>
+</odoo>

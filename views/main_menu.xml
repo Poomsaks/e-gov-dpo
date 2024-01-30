@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="main_menu_document" name="ระบบจัดการ dpo" sequence="1"/>
+
+    </data>
+</odoo>

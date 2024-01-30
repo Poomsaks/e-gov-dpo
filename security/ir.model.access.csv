@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+mdm.document,mdm.document,model_mdm_document,base.group_user,1,1,1,1
+mdt.doc.detail,mdt.doc.detail,model_mdt_doc_detail,base.group_user,1,1,1,1
+mdm.position,mdm.position,model_mdm_position,base.group_user,1,1,1,1
+res.partner,res.partner,model_res_partner,base.group_user,1,1,1,1
+mdt.status.document,mdt.status.document,model_mdt_status_document,base.group_user,1,1,1,1
+mdt.status.doc.detail,mdt.status.doc.detail,model_mdt_status_doc_detail,base.group_user,1,1,1,1

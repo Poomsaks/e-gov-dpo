@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="mdm_document_view_tree" model="ir.ui.view">
+            <field name="name">เอกสาร</field>
+            <field name="model">mdm.document</field>
+            <field name="arch" type="xml">
+                <tree string="เอกสาร">
+                    <field name="name"/>
+                    <field name="name_create_id"/>
+                    <field name="status"/>
+                </tree>
+            </field>
+        </record>
+        <record id="mdm_document_view_form" model="ir.ui.view">
+            <field name="name">เอกสาร</field>
+            <field name="model">mdm.document</field>
+            <field name="arch" type="xml">
+                <form string="เอกสาร">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="name_create_id"/>
+                            <field name="status"/>
+                            <field name="inspector_id"/>
+                            <field name="document_status"/>
+                        </group>
+                        <group string="รายละเอียดเอกสาร">
+                            <group colspan="4">
+                                <field name="doc_detail_ids" widget="one2many_list" nolabel="1">
+                                    <tree editable="bottom">
+                                        <field name="detail_no"/>
+                                        <field name="doc_detail"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="mdm_document_action" model="ir.actions.act_window">
+            <field name="name">เอกสาร</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mdm.document</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="mdm_document_menu" name="เอกสาร" parent="main_menu_document" action="mdm_document_action"
+                  sequence="2"/>
+
+    </data>
+</odoo>

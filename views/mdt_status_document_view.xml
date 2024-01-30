@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="mdt_status_document_view_tree" model="ir.ui.view">
+            <field name="name">สถานะเอกสาร</field>
+            <field name="model">mdt.status.document</field>
+            <field name="arch" type="xml">
+                <tree string="สถานะเอกสาร">
+                    <field name="name"/>
+                    <field name="name_create_id"/>
+                    <field name="inspector_id"/>
+                    <field name="document_status"/>
+                </tree>
+            </field>
+        </record>
+        <record id="mdt_status_document_view_form" model="ir.ui.view">
+            <field name="name">สถานะเอกสาร</field>
+            <field name="model">mdt.status.document</field>
+            <field name="arch" type="xml">
+                <form string="สถานะเอกสาร">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="name_create_id"/>
+                            <field name="status"/>
+                            <field name="inspector_id"/>
+                            <field name="document_status"/>
+                            <field name="comment"/>
+
+                            <field name="detail"/>
+                            <field name="relation_status"/>
+                        </group>
+                        <group string="รายละเอียดเอกสาร">
+                            <group colspan="4">
+                                <field name="doc_detail_ids" widget="one2many_list" nolabel="1">
+                                    <tree editable="bottom">
+                                        <field name="detail_no"/>
+                                        <field name="doc_detail"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="mdt_status_document_action" model="ir.actions.act_window">
+            <field name="name">สถานะเอกสาร</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mdt.status.document</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="mdt_status_document_menu" name="สถานะเอกสาร" parent="main_menu_document"
+                  action="mdt_status_document_action"
+                  sequence="3"/>
+
+    </data>
+</odoo>

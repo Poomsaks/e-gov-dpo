@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="1" model="mdm.position">
+            <field name="name">ผู้รับคำร้อง</field>
+        </record>
+        <record id="2" model="mdm.position">
+            <field name="name">ผู้อนุมัติ</field>
+        </record>
+        <record id="3" model="mdm.position">
+            <field name="name">ผู้ร้องขอข้อมูล</field>
+        </record>
+
+
+    </data>
+</odoo>
